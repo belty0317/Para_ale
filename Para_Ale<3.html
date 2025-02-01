@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ale <3</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffb6c1, #ff99cc, #ff66a3);
+            text-align: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #d63384;
+        }
+        #mensaje {
+            display: none;
+            font-size: 1.5em;
+            color: #555;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #ff66a3;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #e60073;
+        }
+    </style>
+</head>
+<body>
+
+<div class="audio-container">
+    <h2>Escucha esto:3</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/rn0brgg2BpI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+    <h1>Hola Ale :3 💖</h1>
+    <p>Haz clic en el botón para leer algo jeje...</p>
+    <button onclick="mostrarMensaje()">Ver Sorpresa</button>
+    <p id="mensaje">Ale, sé que es un día raro para ti y tal vez eso te haga sentir muy rara, triste o simplemente muy asdhjd, pero quiero que sepas que siempre estoy acá para lo que necesites. No tienes que estar bien todo el tiempo, y eso está bien. T Q word pero mucho mucho y te extraño cada día más 💕</p>
+
+    <script>
+        function mostrarMensaje() {
+            document.getElementById('mensaje').style.display = "block";
+        }
+
+        setInterval(() => {
+            let heart = document.createElement("div");
+            heart.innerHTML = "💖";
+            heart.style.position = "absolute";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = "-20px";
+            heart.style.fontSize = "30px";
+            heart.style.opacity = "0.8";
+            heart.style.animation = "fall 6s linear";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }, 2000); // Los corazones aparecen cada 2 segundos
+
+        let style = document.createElement("style");
+        style.innerHTML = `
+            @keyframes fall {
+                0% { transform: translateY(0); opacity: 1; }
+                100% { transform: translateY(100vh); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+</body>
+</html>
